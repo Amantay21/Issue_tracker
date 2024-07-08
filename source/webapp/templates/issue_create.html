@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Add issue{% endblock %}
+{% block menu %}<a class="nav-link" aria-current="page"  href="{% url 'index' %}">На главную</a>{% endblock %}
+
+{% block content %}
+<h1>Create product</h1>
+
+<form action="{% url 'issue_create' %}" method="post">
+    {% include 'partial/forms.html' with value_submit='Create'  %}
+</form>
+
+<a href="/">На главную</a>
+{% endblock %}
