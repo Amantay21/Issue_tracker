@@ -19,7 +19,7 @@ class Issue(models.Model):
     summary = models.TextField(max_length=200, null=False, blank=False, verbose_name='Заголовок')
     description = models.TextField(max_length=3000, null=True, blank=True, verbose_name='Описание')
     status = models.ForeignKey('webapp.Status', on_delete=models.RESTRICT, verbose_name='Статус')
-    types = models.ManyToManyField('webapp.Type', related_name='tasks', verbose_name='Тип')
+    types = models.ManyToManyField('webapp.Type', related_name='issues', verbose_name='Тип')
     created_date = models.DateTimeField(verbose_name='Время создания', auto_now_add=True)
     updated_date = models.DateTimeField(verbose_name='Время обновления', auto_now=True)
 
