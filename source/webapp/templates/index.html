@@ -10,9 +10,9 @@
         <div class="col-sm-12 col-md-6 col-lg-4">
         <div class="card my-3 " style="width: 18rem;">
             <div class="card-body ">
-                <h5 class="card-title">{{ issue.title }}</h5>
-                <h5 class="card-title">{{ issue.get_status_display }}</h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary">{{ issue.description }}</h6>
+                <h4 class="card-title">{{ issue.summary }}</h4>
+                <h5 class="card-subtitle mb-2 text-body-secondary">{{ issue.description }}</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">{{ issue.status }}</h6>
                 <h6 class="card-subtitle mb-2 text-body-secondary">{{ issue.updated_date }}</h6>
                 <h6 class="card-subtitle mb-2 ">Типы: {% for types in issue.types.all %}
                   {{ types.title }}{% if not forloop.last %}, {% endif %}
