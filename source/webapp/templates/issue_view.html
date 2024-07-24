@@ -8,14 +8,14 @@
             <div class="card-body">
                 <h3 class="card-title">{{ issues.summary }}</h3>
                 <h5 class="card-title">{{ issues.description }}</h5>
-                <h5 class="card-subtitle mb-2 text-body-secondary">Типы: {% for types in issue.types.all %}
-                  {{ types.summary }}{% if not forloop.last %}, {% endif %}
-                    {% endfor %}</h5>
+                <h6 class="card-subtitle mb-2 ">Типы: {% for type in issues.types.all %}
+                  {{ type.title }}{% if forloop.last %}.{% else %}, {% endif %}
+                    {% endfor %}</h6>
 
                 <p class="card-text">Created date: {{ issues.created_date }}</p>
                 <p class="card-text">Updated date: {{ issues.updated_date }}</p>
 
-                <h5>Status: {{ issue.status.title }}</h5>
+                <h5>Status: {{ issues.status.title }}</h5>
                 <p><a href="{% url 'issue_update' pk=issues.pk %}" class="card-link">Редактировать</a></p>
                 <p><a href="{% url 'issue_delete' pk=issues.pk %}" class="card-link" >Delete</a></p>
             </div>
